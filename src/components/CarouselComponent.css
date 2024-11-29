@@ -1,0 +1,82 @@
+.carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Ensure content is aligned to the right */
+}
+
+.carousel-image {
+  max-width: 50%;
+  height: 30rem;
+  margin-right: 0.5rem; /* Leave a 2rem gap from the right */
+  margin-top: 5rem;
+}
+
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 50%;
+  height: auto;
+  margin-right: auto; /* Push the content to the left */
+}
+
+/* Style the arrows */
+.carousel .control-arrow {
+  color: black; /* Change arrow color to black */
+}
+
+/* Ensure only left and right arrows are visible */
+.carousel .control-next.control-arrow,
+.carousel .control-prev.control-arrow {
+  display: block;
+}
+
+.carousel .control-arrow:before {
+  border-top-color: black; /* Top part of the arrow */
+  border-right-color: black; /* Right part of the arrow */
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right-color: transparent; /* Ensure left arrow only has left color */
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left-color: transparent; /* Ensure right arrow only has right color */
+}
+
+/* Hide top and bottom arrows if any */
+.carousel .control-up.control-arrow,
+.carousel .control-down.control-arrow {
+  display: none;
+}
+
+/* Style dots */
+.carousel .carousel-status {
+  display: none; /* Hide the status line */
+}
+
+.carousel .control-dots {
+  position: absolute;
+  bottom: 20px; /* Adjust position as needed */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-right: 5rem;
+}
+
+.carousel .control-dots .dot {
+  background: black; /* Dots color */
+  border-radius: 50%;
+  width: 18px;
+  height: 10px;
+  margin: 5 5px; /* Adjust spacing as needed */
+}
+
+/* Additional Styles for Start Shopping Button */
+.start-shopping-button {
+  margin-top: 1rem; /* Adjust margin to place it below the paragraph */
+  padding: 10px 20px;
+  cursor: pointer;
+}
