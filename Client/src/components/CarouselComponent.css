@@ -1,0 +1,194 @@
+/* General reset to avoid random gaps */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* If you wrap carousel in a container, you can use this class */
+.carousel-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base carousel (react-responsive-carousel default class) */
+.carousel {
+  margin: 0 auto !important;          /* remove bottom gap */
+  padding: 0;
+  background: #020617;
+}
+
+/* Remove default white background/padding on slides */
+.carousel .slide {
+  background: transparent;
+  padding: 0;
+}
+
+/* Our custom slide layout */
+.carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 6vw 3.5rem;          /* top/right/left/bottom */
+  gap: 3.5rem;
+  background: radial-gradient(circle at top left, #f97316 0, #111827 55%, #020617 100%);
+  color: #f9fafb;
+  min-height: 520px;
+  box-sizing: border-box;
+}
+
+/* Text side */
+.carousel-content {
+  flex: 0.9;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.carousel-content h1,
+.carousel-content h2 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.carousel-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #e5e7eb;
+}
+
+/* Image side – large and prominent */
+.carousel-image {
+  flex: 1.1;
+  max-width: 560px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* CTA button */
+.start-shopping-button {
+  margin-top: 1.25rem;
+  padding: 12px 26px;
+  cursor: pointer;
+  border-radius: 999px;
+  border: none;
+  background: #f97316;
+  color: #111827;
+  font-size: 0.98rem;
+  font-weight: 600;
+  align-self: flex-start;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.start-shopping-button:hover {
+  background: #fb923c;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(249, 115, 22, 0.55);
+}
+
+/* Arrows */
+.carousel .control-arrow {
+  color: #f9fafb;
+}
+
+.carousel .control-next.control-arrow,
+.carousel .control-prev.control-arrow {
+  display: block;
+}
+
+.carousel .control-arrow:before {
+  border-top-color: #f9fafb;
+  border-right-color: #f9fafb;
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right-color: transparent;
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left-color: transparent;
+}
+
+/* Hide up/down arrows if any */
+.carousel .control-up.control-arrow,
+.carousel .control-down.control-arrow {
+  display: none;
+}
+
+/* Hide status line */
+.carousel .carousel-status {
+  display: none;
+}
+
+/* Dots – and make sure they don't create extra gap */
+.carousel .control-dots {
+  position: absolute;
+  bottom: 16px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel .control-dots .dot {
+  background: #f97316;
+  border-radius: 999px;
+  width: 20px;
+  height: 8px;
+  margin: 0 4px;
+}
+
+/* Responsive carousel */
+@media (max-width: 900px) {
+  .carousel-slide {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 3rem 1.5rem 3.5rem;
+    gap: 2rem;
+  }
+
+  .carousel-content {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .start-shopping-button {
+    align-self: center;
+  }
+
+  .carousel-image {
+    max-width: 90%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-slide {
+    min-height: 0;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .carousel-content h1,
+  .carousel-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-image {
+    height: 260px;
+  }
+}

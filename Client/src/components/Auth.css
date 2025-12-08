@@ -1,0 +1,133 @@
+/* ================= AUTH PAGE WRAPPER ================= */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 880px;
+  margin: 60px auto;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ================= LEFT: FORM ================= */
+.auth-form {
+  flex: 1.4;
+  padding: 40px 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.auth-form h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #030712;
+  margin-bottom: 1rem;
+}
+
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.auth-form input {
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1.5px solid #d1d5db;
+  font-size: 0.95rem;
+  background: white;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+.auth-form button {
+  padding: 12px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: #111827;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.auth-form button:hover {
+  background: black;
+  transform: translateY(-1px);
+}
+
+/* Success / Error messages */
+.error {
+  font-size: 0.9rem;
+  color: #d32f2f;
+}
+
+.auth-form p {
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+/* ================= RIGHT: IMAGE ================= */
+.auth-image {
+  flex: 0.9;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FIX HERE: image size */
+.auth-image img {
+  width: 88%;
+  max-width: 260px;
+  height: 200px;               /* perfect height */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.auth-image img:hover {
+  transform: scale(1.04);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 780px) {
+  .auth-container {
+    flex-direction: column-reverse;
+    margin: 40px auto;
+  }
+
+  .auth-form {
+    padding: 30px 25px;
+  }
+
+  .auth-image {
+    padding: 12px 0 8px;
+  }
+
+  .auth-image img {
+    width: 94%;
+    max-width: 400px;
+    height: 185px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+}

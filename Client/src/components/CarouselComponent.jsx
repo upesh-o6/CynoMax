@@ -18,16 +18,16 @@ const CarouselComponent = () => {
     <Carousel showThumbs={false} autoPlay infiniteLoop>
       <div className="carousel-slide">
         <div className="carousel-content">
-        <h2>Discover the Joy of Shopping with CynoMax</h2>
-        <p>Step into a world of endless possibilities with Cynomax. From the latest trends to timeless classics, our shopping app brings you the best of everything. Experience unparalleled convenience, exclusive deals, and a user-friendly interface designed to make your shopping journey delightful and memorable. Unleash the joy of shopping today and indulge in the finest products curated just for you.</p>
+        <h2>Discover the Joy of Shopping with ShopEasy</h2>
+        <p>Step into a world of endless possibilities with ShopEasy. From the latest trends to timeless classics, our shopping app brings you the best of everything. Experience unparalleled convenience, exclusive deals, and a user-friendly interface designed to make your shopping journey delightful and memorable. Unleash the joy of shopping today and indulge in the finest products curated just for you.</p>
           <button className="start-shopping-button" onClick={handleStartShopping}>Start Shopping</button>
         </div>
         <img src={Image1} alt="Slide 1" className="carousel-image" />
       </div>
       <div className="carousel-slide">
         <div className="carousel-content">
-          <h2>Discover the Joy of Shopping with CynoMax</h2>
-          <p>Step into a world of endless possibilities with . From the latest trends to timeless classics, our shopping app brings you the best of everything. Experience unparalleled convenience, exclusive deals, and a user-friendly interface designed to make your shopping journey delightful and memorable. Unleash the joy of shopping today and indulge in the finest products curated just for you.</p>
+          <h2>Discover the Joy of Shopping with ShopEasy</h2>
+          <p>Step into a world of endless possibilities with ShopEasy. From the latest trends to timeless classics, our shopping app brings you the best of everything. Experience unparalleled convenience, exclusive deals, and a user-friendly interface designed to make your shopping journey delightful and memorable. Unleash the joy of shopping today and indulge in the finest products curated just for you.</p>
           <button className="start-shopping-button" onClick={handleStartShopping}>Start Shopping</button>
 
         </div>
@@ -35,8 +35,9 @@ const CarouselComponent = () => {
       </div>
       <div className="carousel-slide">
         <div className="carousel-content">
-        <h2>Discover the Joy of Shopping with CynoMax</h2>
-        <p>Step into a world of endless possibilities with Cynomax. From the latest trends to timeless classics, our shopping app brings you the best of everything. Experience unparalleled convenience, exclusive deals, and a user-friendly interface designed to make your shopping journey delightful and memorable. Unleash the joy of shopping today and indulge in the finest products curated just for you.</p>
+        <h2>Discover the Joy of Shopping with ShopEasy</h2>
+                <p>Step into a world of endless possibilities with ShopEasy. From the latest trends to timeless classics, our shopping app brings you the best of everything. Experience unparalleled convenience, exclusive deals, and a user-friendly interface designed to make your shopping journey delightful and memorable. Unleash the joy of shopping today and indulge in the finest products curated just for you.</p>
+
           <button className="start-shopping-button" onClick={handleStartShopping}>Start Shopping</button>
 
         </div>
