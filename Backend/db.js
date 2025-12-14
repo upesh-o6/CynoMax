@@ -1,13 +1,22 @@
-const mysql = require("mysql2/promise");
-require("dotenv").config();
+const { Pool } = require("pg");
 
-const pool = mysql.createPool({
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "1369",
-  database: process.env.DB_NAME || "shopping",
-  waitForConnections: true,
-  connectionLimit: 10,
+const required = ["DB_HOST", "DB_USER", "DB_PASSWORD", "DB_NAME", "DB_PORT"];
+required.forEach((key) => {
+  if (!process.env[key]) {
+    console.warn(`[env] Missing ${key}. Set it in your Render environment.`);
+  }
+});
+
+const pool = new Pool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: Number(process.env.DB_PORT || 5432),
+  ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : false,
+  max: 10,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 2000,
 });
 
 module.exports = pool;
