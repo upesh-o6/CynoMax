@@ -1,43 +1,32 @@
+console.log("🚀 BACKEND INDEX.JS LOADED");
+
 const express = require("express");
 const cors = require("cors");
-const path = require("path");
 require("dotenv").config();
 
 const authRoutes = require("./routes/auth");
-
 const app = express();
 
-// middlewares
-app.use(cors());
+// CORS: allow your Netlify frontend
+app.use(cors({
+  origin: "https://shop-easy0.netlify.app",
+  credentials: true
+}));
+
+// JSON parsing
 app.use(express.json());
 
-// main API routes
+// Routes
 app.use("/auth", authRoutes);
+console.log("✅ AUTH ROUTES MOUNTED");
 
-// health check for backend (works always)
+
+// Health check
 app.get("/health", (req, res) => {
   res.json({ ok: true, message: "Backend is working fine" });
 });
 
-// serve frontend build only when deployed (production mode)
-if (process.env.NODE_ENV === "production") {
-  const distPath = path.join(__dirname, "../Client/dist");
-  
-  // serve static files
-  app.use(express.static(distPath));
-
-  // fallback for SPA routing
-  app.use((req, res, next) => {
-    // only GET requests
-    if (req.method !== "GET") return next();
-
-    // skip API routes
-    if (req.path.startsWith("/auth")) return next();
-
-    res.sendFile(path.join(distPath, "index.html"));
-  });
-}
-
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
